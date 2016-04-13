@@ -3,6 +3,8 @@ package org.ligson.algorithm.sort;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+import org.ligson.classloader.MyClassLoader;
+
 public class Main {
 	public static int[] array = new int[] { 12, 33, 434, 45, 56, 67, 8, 76, 45, 45, 45, 58, 85, 4, 5, 6, 5, 4, 56, 54,
 			655, 46, 58, 22, 44, 9552, 4149, 54 };
@@ -51,7 +53,8 @@ public class Main {
 		iSort = new ShellInsertSort();
 		iSort.sort(dest);
 		println(dest);
-		
+
 		println(Object.class.getClasses());
+	
 	}
 }
