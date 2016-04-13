@@ -9,9 +9,7 @@ package org.ligson.algorithm.sort;
 public class MaoPao implements ISort {
 
 	@Override
-	public int[] sort(int[] src) {
-		int[] dest = new int[src.length];
-		System.arraycopy(src, 0, dest, 0, dest.length);
+	public void sort(int[] dest) {
 		for (int i = 0; i < dest.length; i++) {
 			for (int j = 0; j < dest.length - 1; j++) {
 				if (dest[j] > dest[i]) {
@@ -21,7 +19,12 @@ public class MaoPao implements ISort {
 				}
 			}
 		}
-		return dest;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "冒泡排序";
 	}
 
 }
