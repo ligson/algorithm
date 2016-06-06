@@ -1,6 +1,8 @@
 package org.ligson.algorithm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /***
  * 全排列:例如数组[1,2,3]输出 123 132 213 231 312 321
@@ -9,9 +11,10 @@ import java.util.Arrays;
  *
  */
 public class FullArray {
-	public static int[] array = { 1, 3, 5, 4 };
+	public  int[] array = { 1, 3, 5, 4 };
+	public List list = new ArrayList<>();
 
-	private static void swap(int[] arr, int i1, int i2) {
+	private  void swap(int[] arr, int i1, int i2) {
 		int temp = arr[i2];
 		arr[i2] = arr[i1];
 		arr[i1] = temp;
@@ -26,9 +29,10 @@ public class FullArray {
 	 * @param begin
 	 * @param end
 	 */
-	public static void recursion(int arr[], int begin, int end) {
+	public  void recursion(int arr[], int begin, int end) {
 		if (end == begin) { // 一到递归的出口就输出数组，此数组为全排列
 			System.out.println(Arrays.toString(arr));
+			list.add(arr);
 		} else {
 			for (int j = begin; j <= end; j++) {
 				swap(arr, begin, j); // for循环将begin~end中的每个数放到begin位置中去
@@ -40,6 +44,6 @@ public class FullArray {
 
 	public static void main(String[] args) {
 		// recursion(array, 0);
-		recursion(array, 0, array.length - 1);
+		//recursion(array, 0, array.length - 1);
 	}
 }
